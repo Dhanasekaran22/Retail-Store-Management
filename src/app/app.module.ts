@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BillAutomationComponent } from './bill-automation/bill-automation.component';
 import { FormsModule } from '@angular/forms';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BillAutomationComponent
+    BillAutomationComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
