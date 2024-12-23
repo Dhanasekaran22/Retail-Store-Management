@@ -2,17 +2,13 @@
 <div>
     <h2>Retail Store Management</h2>
     
-    <select [(ngModel)]="itemIdTemp" >
-        <option value="null"  disabled selected>Select Customer Id</option>
-        <option value="5001">5001</option>
-        <option value="5002">5002</option>
-        <option value="5003">5003</option>
-        <option value="5004">5004</option>
-        <option value="5005">5005</option>
+    <select [(ngModel)]="itemTemp" required>
+        <option value="null"  disabled selected>Select Products</option>
+        <option *ngFor="let option of options" [value]="option">{{option}}</option>
     </select>
+    
     <input type="number" [(ngModel)]="quantityTemp" placeholder="Enter the quantity">
-
- 
+    <span *ngIf="checkValue" style="color: red; margin-left: 13px;">Enter the Correct Value</span>
     <button  (click)="addData()">ADD</button>
 
     <button (click)="displayDetails()" >Generate Bil</button>

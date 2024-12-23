@@ -7,34 +7,45 @@ import { format } from '../models/typeDeclaration';
   styleUrls: ['./bill-automation.component.css']
 })
 export class BillAutomationComponent {
-  details:format[]= [];
-  itemIdTemp: number | null = null;
+  details: format[] = [];
+
+  itemTemp: string | null = null;
+  options: string[] = ['Dates', 'Badam', 'Cashew', 'Walnut', 'Pistachio', 'Figs']
+
   quantityTemp: number | null = null;
-  yOrN: string | null = null;
+  
 
   result: number | null = 0;
   price: number = 0;
   discountedAmount: number = 0;
-  generate:boolean=false;
+  generate: boolean = false;
 
   displayDetails() {
-    
 
-    this.itemIdTemp = null;
+
+    this.itemTemp = null;
     this.quantityTemp = null;
-    this.yOrN = null;
-    this.generate=true
+    
+    this.generate = true
 
   }
+  checkValue: boolean = false;
 
   addData() {
-    this.details.push({ itemId: this.itemIdTemp, quantity: this.quantityTemp, addItem: this.yOrN })
+    this.details.push({ itemName: this.itemTemp, quantity: this.quantityTemp })
 
     this.result = 0;
 
+    if (this.quantityTemp != null && this.quantityTemp > 0) {
+      this.checkValue = false;
+    }
+    else {
+      this.checkValue = true;
+    }
+
     for (let unique of this.details) {
 
-      if (unique.itemId == 5001) {
+      if (unique.itemName == 'Dates' && !this.checkValue) {
         this.price = 20;
         if (unique.quantity !== null && this.result !== null) {
           this.result += (this.price * unique.quantity)
@@ -42,21 +53,21 @@ export class BillAutomationComponent {
         }
       }
 
-      else if (unique.itemId == 5002 ) {
+      else if (unique.itemName == 'Badam'&& !this.checkValue) {
         this.price = 25;
         if (unique.quantity !== null && this.result !== null) {
           this.result += (this.price * unique.quantity);
         }
       }
 
-      else if (unique.itemId == 5003 ) {
+      else if (unique.itemName == 'Cashew'&& !this.checkValue) {
         this.price = 30;
         if (unique.quantity !== null && this.result !== null) {
           this.result += (this.price * unique.quantity);
         }
       }
 
-      else if (unique.itemId == 5004 ) {
+      else if (unique.itemName == 'Walnut'&& !this.checkValue) {
         this.price = 40;
         if (unique.quantity !== null && this.result !== null) {
           this.discountedAmount = (this.price * unique.quantity) * 0.20
@@ -64,31 +75,39 @@ export class BillAutomationComponent {
         }
       }
 
-      else if (unique.itemId == 5005 ) {
+      else if (unique.itemName == 'Pistachio'&& !this.checkValue) {
         this.price = 50;
         if (unique.quantity !== null && this.result !== null) {
           this.discountedAmount = (this.price * unique.quantity) * 0.20
           this.result += (this.price * unique.quantity) - this.discountedAmount;
         }
       }
-      this.itemIdTemp = null;
+
+      else if (unique.itemName == 'Figs'&& !this.checkValue) {
+        this.price = 50;
+        if (unique.quantity !== null && this.result !== null) {
+          this.discountedAmount = (this.price * unique.quantity) * 0.20
+          this.result += (this.price * unique.quantity) - this.discountedAmount;
+        }
+      }
+
+      this.itemTemp = null;
       this.quantityTemp = null;
-      this.yOrN = null;
 
 
     }
+   
     this.price = 0
 
-    this.itemIdTemp = null;
+    this.itemTemp = null;
     this.quantityTemp = null;
-    this.yOrN = null;
   }
 
   reset() {
     this.price = 0;
     this.result = 0;
     this.details = [];
-    this.generate=false;
+    this.generate = false;
   }
 
 }

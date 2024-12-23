@@ -1,5 +1,5 @@
 export interface format{
-    itemId:number|null;
+    itemName:string|null;
     quantity:number|null;
-    addItem:string|null;
+    
 }

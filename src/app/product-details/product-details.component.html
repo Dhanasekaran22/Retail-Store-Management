@@ -1,4 +1,6 @@
-<div>
-    <h1>Retail Store Management</h1>
-    <h2>Product Details</h2>
+<div *ngIf="imageDetail">
+    <h2>{{imageDetail.name}}</h2>
+    <img [src]="imageDetail.imageSource" alt="{{imageDetail.name}}">
+    <h4 style="margin: 0px;">{{imageDetail.name}}</h4>
+    <h3 style="color:darkblue">{{imageDetail.priceDetails}}</h3>
 </div>

@@ -1,0 +1,21 @@
+<div>
+
+    <h2 style="margin-left: 14%;">Product Details</h2>
+
+    <div class="card">
+
+        <div *ngFor="let imageDetail of imageDetails" class="image">
+
+            <img 
+             [src]="imageDetail.imageSource" 
+             alt={{imageDetail.name}}
+             (click)="onImageClick(imageDetail)">
+            <h4 style="margin: 0px;">{{imageDetail.name}}</h4>
+            <h3 style="color:darkblue;">{{imageDetail.priceDetails}}</h3>
+
+
+        </div>
+
+    </div>
+
+</div>

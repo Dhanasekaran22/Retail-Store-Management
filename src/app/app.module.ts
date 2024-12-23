@@ -6,19 +6,22 @@ import { AppComponent } from './app.component';
 import { BillAutomationComponent } from './bill-automation/bill-automation.component';
 import { FormsModule } from '@angular/forms';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ProductListComponent } from './product-list/product-list.component';
+import { SelectedImageService } from './selected-image.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     BillAutomationComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [SelectedImageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
