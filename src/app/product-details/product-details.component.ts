@@ -15,12 +15,17 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.imageDetail = this.imageService.getImageDetails();
 
+    if(this.imageDetail.name=='Medjoul Jordan Dates'){
+      console.log("true");
+      
+
+    }
+    
     
   }
 
   options: string[] = ['500 GM', '1 KG',]
   weight: string = '250 GM';
-
 
   quantity: number = 1;
   countIncrement() {
@@ -35,6 +40,8 @@ export class ProductDetailsComponent implements OnInit {
       this.quantity -= 1;
     }
   }
+
+
 
   clickWishList = false;
   changeWishlist(){
