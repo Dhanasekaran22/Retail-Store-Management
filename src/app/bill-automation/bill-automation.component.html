@@ -3,7 +3,6 @@
     <h2>Retail Store Management</h2>
     
     <select [(ngModel)]="itemTemp" required>
-        <option value="null"  disabled selected>Select Products</option>
         <option *ngFor="let option of options" [value]="option">{{option}}</option>
     </select>
     

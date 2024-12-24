@@ -4,10 +4,10 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class SelectedImageService {
-  imageDetails:{imageSource:string,name:string,priceDetails:string} |null=null;
+  imageDetails:any ;
   constructor() { }
 
-  setImageDetails(image:{imageSource:string,name:string,priceDetails:string}){
+  setImageDetails(image:any){
     this.imageDetails=image;
   }
 

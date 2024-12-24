@@ -8,13 +8,15 @@ import { FormsModule } from '@angular/forms';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { SelectedImageService } from './selected-image.service';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BillAutomationComponent,
     ProductDetailsComponent,
-    ProductListComponent
+    ProductListComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

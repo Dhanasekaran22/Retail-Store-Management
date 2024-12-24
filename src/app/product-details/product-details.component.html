@@ -1,6 +1,31 @@
-<div *ngIf="imageDetail">
-    <h2>{{imageDetail.name}}</h2>
-    <img [src]="imageDetail.imageSource" alt="{{imageDetail.name}}">
-    <h4 style="margin: 0px;">{{imageDetail.name}}</h4>
-    <h3 style="color:darkblue">{{imageDetail.priceDetails}}</h3>
+<div class="container">
+    <div  class="left"> 
+        <img [src]="imageDetail.imageSource" alt="{{imageDetail.name}}">
+    </div>
+
+    <div class="right"> 
+        <h2 style="margin: 0px;">{{imageDetail.name}}</h2>
+
+        <label for="Weight">
+            <p>WEIGHT</p>
+        </label>
+        <select [(ngModel)]="weight">
+            <option value="250 GM">250 GM</option>
+            <option *ngFor="let option of options" [value]="option">{{option}}</option>
+        </select>
+
+        <label for="size">
+            <p>QTY</p>
+        </label>
+        <button (click)="countDecrement()" >-</button>
+        <span >{{quantity}}</span>
+        <button (click)="countIncrement()" >+</button><br>
+
+        <button class="btn cart">Add to cart</button>
+        <button class="btn buy">Buy it Now</button>
+        <div class="wishlist">
+            <img *ngIf="!clickWishList" src="assets/images/wishlist-before.png" (click)="changeWishlist()" alt="wishlist">
+            <img *ngIf="clickWishList" src="assets/images/wishlist-after.png" (click)="changeWishlist()">
+        </div>
+    </div>
 </div>

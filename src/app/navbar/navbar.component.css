@@ -1,0 +1,44 @@
+nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f4f4f4; /* Navbar background color */
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow */
+    z-index: 1; /* Ensures the navbar stays above other elements */
+  }
+  
+  h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    background-color: #f4f4f4; /* Same background color as navbar */
+    padding: 0 10px; /* Optional padding to make the background color extend around text */
+    z-index: 2; /* Ensures the title stays above the navbar background */
+  }
+  
+  ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+  }
+  
+  ul li {
+    margin-left: 20px;
+  }
+  
+  .icon {
+    width: 24px; /* Adjust the size of the icons */
+    height: 24px; /* Adjust the size of the icons */
+  }
+  
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
