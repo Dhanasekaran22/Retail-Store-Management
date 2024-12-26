@@ -21,7 +21,6 @@ img {
 
 
 .wishlist {
-    margin-top: 10px;
     cursor: pointer;
 }
 
@@ -97,6 +96,12 @@ span {
     background-color: white;
     color:#004085;
     border: 1px solid #004085;
+}
+
+.right h3{
+    color: goldenrod;
+    margin: 0px;
+    margin-top: 10px;
 }
 
 

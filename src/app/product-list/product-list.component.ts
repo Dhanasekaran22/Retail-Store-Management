@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ProductListComponent {
   imageDetails:{imageSource:string,name:string,priceDetails:string}[]=[
-    {imageSource:'assets/images/AlmondUSA-Badam.jpg',name:'Medjoul Jordan Dates',priceDetails:'From Rs. 475.00' },
+    {imageSource:'assets/images/MedjoolSuperJumbo.png',name:'Medjoul Jordan Dates',priceDetails:'From Rs. 475.00' },
     {imageSource:"assets/images/Chile_Walnut_Without_Shell.png", name:"Chile Walnut", priceDetails:'From Rs. 548.00'},
     {imageSource:'assets/images/AlmondUSA-Badam.jpg',name:'USA Almonds',priceDetails:'From Rs. 398.00'},
     {imageSource:"assets/images/PremiumIranianPistachio-PistaNo1.jpg",name:"Iranian Pistachio",priceDetails:'From Rs. 268.00'},

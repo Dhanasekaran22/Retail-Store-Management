@@ -5,11 +5,11 @@
 
     <div class="right"> 
         <h2 style="margin: 0px;">{{imageDetail.name}}</h2>
-
+        <h3 >Rs. {{individualProductPrice}}</h3>
         <label for="Weight">
             <p>WEIGHT</p>
         </label>
-        <select [(ngModel)]="weight">
+        <select [(ngModel)]="weight" (change)="calculateProductPrice()">
             <option value="250 GM">250 GM</option>
             <option *ngFor="let option of options" [value]="option">{{option}}</option>
         </select>
