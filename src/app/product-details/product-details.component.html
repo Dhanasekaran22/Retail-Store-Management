@@ -22,7 +22,7 @@
         <button (click)="countIncrement()" >+</button><br>
 
         <button class="btn cart">Add to cart</button>
-        <button class="btn buy">Buy it Now</button>
+        <button (click)="buyNow()" class="btn buy">Buy it Now</button>
         <div class="wishlist">
             <img *ngIf="!clickWishList" src="assets/images/wishlist-before.png" (click)="changeWishlist()" alt="wishlist">
             <img *ngIf="clickWishList" src="assets/images/wishlist-after.png" (click)="changeWishlist()">

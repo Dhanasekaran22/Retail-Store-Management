@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectedImageService } from '../selected-image.service';
+import { ProductSummaryService } from '../product-summary.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-details',
@@ -52,7 +54,11 @@ export class ProductDetailsComponent implements OnInit {
     },
   }
 
-  constructor(private imageService: SelectedImageService) { }
+  constructor(
+    private imageService: SelectedImageService,
+    private router: Router,
+    private summaryService: ProductSummaryService
+  ) { }
 
   ngOnInit(): void {
     this.imageDetail = this.imageService.getImageDetails();
@@ -63,8 +69,8 @@ export class ProductDetailsComponent implements OnInit {
     // const productName=this.imageDetail.name;
     // const productWeight=this.weight;
 
-    if(this.productPricing[this.imageDetail.name] ){
-      this.individualProductPrice=this.productPricing[this.imageDetail.name][this.weight]*this.quantity
+    if (this.productPricing[this.imageDetail.name]) {
+      this.individualProductPrice = this.productPricing[this.imageDetail.name][this.weight] * this.quantity
     }
   }
 
@@ -91,6 +97,21 @@ export class ProductDetailsComponent implements OnInit {
     this.clickWishList = !this.clickWishList;
   }
 
+
+  buyNow() {
+    const productData = {
+      image: this.imageDetail.imageSource,
+      name: this.imageDetail.name,
+      price: this.individualProductPrice,
+      weight: this.weight,
+      quantity: this.quantity
+    };
+    
+    this.summaryService.setProductData(productData);
+
+    this.router.navigate(['/order-summary']);
+
+  }
 
 
 
