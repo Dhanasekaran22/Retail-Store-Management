@@ -1,0 +1,116 @@
+/* .order-summary {
+    width: calc(100% - 32px);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    margin: 20px 16px; 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    box-sizing: border-box; 
+} */
+
+
+.order-summary {
+    width: calc(100% - 32px); /* Adjust width to account for padding/margin */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    margin: 20px 16px; /* Add horizontal margin for spacing */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+    flex-grow: 1; /* Allow the order summary to grow and push the button down */
+}
+
+.order-summary h2 {
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    color: #333;
+}
+
+.order-summary img {
+    width: 150px;
+    height: auto;
+    border-radius: 4px;
+    margin-right: 16px;
+    flex-shrink: 0;
+}
+
+.order-summary h3 {
+    flex: 1;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 8px;
+    color: #333;
+    word-wrap: break-word;
+}
+
+.order-summary p {
+    font-size: 14px;
+    margin: 4px 0;
+    color: #666;
+}
+
+
+
+.order-summary .details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.order-summary .price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    
+    text-align: left;
+    margin-top: 2px; /* Add a bit of margin to separate from the content above */
+    margin-left: 15px;
+}
+
+.displaySide{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2px;
+}
+
+.pay-now {
+    width: 85px; /* Make the button width smaller than the container */
+    height: 30px;
+    
+    margin-left: 3px;
+    background-color: #004085; /* Requested color */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px; /* Smaller font size for the button */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: flex-start; /* Align the button to the left */
+}
+
+
+
+.pay-now:hover {
+    background-color: #003366; /* Darker blue on hover */
+}
+
+.pay-now:active {
+    background-color: #002c53; /* Even darker blue on active */
+}
+
+.pay-now:focus {
+    outline: none;
+}
