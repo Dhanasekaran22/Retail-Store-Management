@@ -98,6 +98,11 @@ span {
     border: 1px solid #004085;
 }
 
+.buy:active{
+    background-color: #002c53;
+    color:whitesmoke;
+}
+
 .right h3{
     color: goldenrod;
     margin: 0px;
