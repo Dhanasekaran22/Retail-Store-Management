@@ -1,0 +1,13 @@
+<div class="add-to-cart">
+    <h2>Shopping Cart</h2>
+
+    <div *ngFor="let cartdata of cartDatas" class="product-details">
+        <img [src]="cartdata.image" [alt]="cartdata.name">
+        <div class="details">
+            <h3>{{ cartdata.name }}</h3>
+            <p class="weight">Weight: {{ cartdata.weight }}</p>
+            <p class="quantity">Qty: {{ cartdata.quantity }}</p>
+            <p class="price">Rs. {{ cartdata.price }}</p>
+        </div>
+    </div>
+</div>

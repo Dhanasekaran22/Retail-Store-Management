@@ -5,11 +5,13 @@ import { SelectedImageService } from './selected-image.service';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductSummaryService } from './product-summary.service';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
+import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
 
 const routes: Routes = [
   {path:'',component:ProductListComponent},
   {path:'image-details',component:ProductDetailsComponent},
-  {path:'order-summary',component:OrderSummaryComponent}
+  {path:'order-summary',component:OrderSummaryComponent},
+  {path:'add-to-cart',component:AddToCartComponent}
 ];
 
 @NgModule({

@@ -10,6 +10,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { SelectedImageService } from './selected-image.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
+import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { OrderSummaryComponent } from './order-summary/order-summary.component';
     ProductDetailsComponent,
     ProductListComponent,
     NavbarComponent,
-    OrderSummaryComponent
+    OrderSummaryComponent,
+    AddToCartComponent
   ],
   imports: [
     BrowserModule,

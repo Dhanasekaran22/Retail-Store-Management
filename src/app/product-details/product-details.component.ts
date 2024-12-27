@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SelectedImageService } from '../selected-image.service';
 import { ProductSummaryService } from '../product-summary.service';
 import { Router } from '@angular/router';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-product-details',
@@ -57,18 +58,17 @@ export class ProductDetailsComponent implements OnInit {
   constructor(
     private imageService: SelectedImageService,
     private router: Router,
-    private summaryService: ProductSummaryService
+    private summaryService: ProductSummaryService,
+    private cartService:CartService
   ) { }
 
   ngOnInit(): void {
     this.imageDetail = this.imageService.getImageDetails();
     this.calculateProductPrice();
+    
   }
 
-  calculateProductPrice() {
-    // const productName=this.imageDetail.name;
-    // const productWeight=this.weight;
-
+  calculateProductPrice() {  
     if (this.productPricing[this.imageDetail.name]) {
       this.individualProductPrice = this.productPricing[this.imageDetail.name][this.weight] * this.quantity
     }
@@ -111,6 +111,21 @@ export class ProductDetailsComponent implements OnInit {
 
     this.router.navigate(['/order-summary']);
 
+  }
+
+  allCartItems:any[]=[];
+  addToCart(){
+    const cartDetails={
+      image: this.imageDetail.imageSource,
+      name: this.imageDetail.name,
+      price: this.individualProductPrice,
+      weight: this.weight,
+      quantity: this.quantity
+    }
+
+    
+    this.cartService.setCartData(cartDetails);
+    this.router.navigate(['/add-to-cart'])
   }
 
 
